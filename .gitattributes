@@ -1,6 +1,6 @@
-@'
 wwwroot/lib/** linguist-vendored
+wwwroot/**/*.css linguist-vendored
+wwwroot/**/*.js linguist-vendored
 **/*.min.css linguist-vendored
 **/*.min.js linguist-vendored
 **/*.map linguist-generated
-'@ | Out-File -Encoding UTF8 .gitattributes

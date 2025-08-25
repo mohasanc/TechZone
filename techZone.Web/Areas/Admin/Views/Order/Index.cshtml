@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Orders";
+    ViewBag.PageTitle = "Orders Mangement";
+    ViewBag.CardTitle = "View Orders";
+}
+
+@Html.AntiForgeryToken()
+<table id="myTable" class="table table-bordered table-sm text-center">
+    <thead style="background-color: #000; color: #fff;" class="text-center">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Order Status</th>
+            <th>Order Date</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+</table>
+
+@section Scripts {
+    <script src="~/js/order.js"></script>
+}

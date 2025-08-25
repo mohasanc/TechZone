@@ -1,0 +1,21 @@
+﻿.login-section {
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #2980b9;
+    }

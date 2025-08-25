@@ -1,0 +1,112 @@
+﻿@page
+@using techZone.Utilities
+@model RegisterModel
+
+<section class="register-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card shadow-lg border-0 rounded-3">
+                    <div class="card-body p-3">
+                        <h2 class="text-center mb-4">Create a New Account</h2>
+                        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Name" class="form-control" autocomplete="Name" placeholder="Name" />
+                                <label asp-for="Input.Name">Name</label>
+                                <span asp-validation-for="Input.Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Address" class="form-control" autocomplete="Address" placeholder="Address" />
+                                <label asp-for="Input.Address">Address</label>
+                                <span asp-validation-for="Input.Address" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.City" class="form-control" autocomplete="City" placeholder="City" />
+                                <label asp-for="Input.City">City</label>
+                                <span asp-validation-for="Input.City" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="Email" />
+                                <label asp-for="Input.Email">Email</label>
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Phone" class="form-control" autocomplete="Phone" placeholder="Phone" />
+                                <label asp-for="Input.Phone">Phone</label>
+                                <span asp-validation-for="Input.Phone" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" placeholder="Password" />
+                                <label asp-for="Input.Password">Password</label>
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" placeholder="Confirm Password" />
+                                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                            </div>
+
+                            @if (User.IsInRole(SD.AdminRole))
+                            {
+                                <div class="mb-3">
+                                    <label class="form-label">Assign Role:</label><br />
+                                    <input type="radio" value="@SD.AdminRole" name="RoleRadio" /> @SD.AdminRole
+                                    <input type="radio" value="@SD.EditorRole" name="RoleRadio" class="ms-3" /> @SD.EditorRole
+                                    <input type="radio" value="@SD.CustomerRole" name="RoleRadio" class="ms-3" /> @SD.CustomerRole
+                                </div>
+                            }
+
+                            <div class="d-grid">
+                                @if (User.IsInRole(SD.AdminRole))
+                                {
+                                    <button id="registerSubmit" type="submit" class="btn btn-primary btn-lg">Create New User</button>
+                                }
+                                else
+                                {
+                                    <button id="registerSubmit" type="submit" class="btn btn-primary btn-lg">Register</button>
+                                }
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .register-section {
+        background: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        border-radius: 15px;
+    }
+
+    .btn-primary {
+        background-color: #3498db;
+        border: none;
+        transition: background 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

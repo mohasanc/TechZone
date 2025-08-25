@@ -1,0 +1,22 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Mvc;
+global using techZone.Entities.Models;
+global using techZone.DataAccess.Data;
+global using System.Diagnostics;
+global using techZone.Entities.Repositories;
+global using techZone.Entities.ViewModel;
+global using Microsoft.AspNetCore.Mvc.Rendering;
+global using Microsoft.AspNetCore.Authorization;
+global using techZone.Utilities;
+global using Stripe.Checkout;
+global using System.Security.Claims;
+global using Session = Stripe.Checkout.Session;
+global using SessionCreateOptions = Stripe.Checkout.SessionCreateOptions;
+global using SessionService = Stripe.Checkout.SessionService;
+global using X.PagedList.Extensions;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Identity.UI.Services;
+global using techZone.DataAccess.Implementation;
+global using Stripe;
+global using techZone.DataAccess.DbInitializer;
+

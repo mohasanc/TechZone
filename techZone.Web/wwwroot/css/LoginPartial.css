@@ -1,0 +1,43 @@
+﻿.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+    .navbar-nav .nav-link:hover,
+    .dropdown-menu .dropdown-item:hover,
+    #logout:hover {
+        color: #0d6efd !important; /* أزرق عند hover */
+    }
+
+.navbar-nav i {
+    color: inherit !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: #212529;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+    .dropdown-menu .dropdown-item {
+        color: white !important;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #343a40;
+            color: #0d6efd !important;
+        }
+
+/* زرار الـ Logout */
+#logout {
+    color: white !important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    #logout:hover {
+        color: #0d6efd !important;
+    }
